@@ -1,6 +1,5 @@
 package com.invo.impl;
 
-import com.invo.dal.ItemDAL;
 import com.invo.dal.impl.ItemDALImpl;
 import com.invo.dto.Response;
 import com.invo.model.Transaction;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import static com.invo.util.IdGenerator.generateRandomString;
