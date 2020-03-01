@@ -32,6 +32,12 @@ public class AuthServiceImpl implements AuthService {
         if (!StringUtils.isEmpty(userRepo.getPassword()) && userRepo.getPassword()
             .equals(user.getPassword()) && userRepo.getUsername().equals(user.getUsername())) {
             user.setLoggedIn(true);
+            if (!StringUtils.isEmpty(userRepo.getDeviceId())) {
+                user.setDeviceId(userRepo.getDeviceId());
+            }
+            if(!StringUtils.isEmpty(userRepo.getKey())) {
+                user.setKey(userRepo.getKey());
+            }
             userDAL.save(user);
             response.setSuccess(true);
             log.info("User logged in {}", user.getUsername());
