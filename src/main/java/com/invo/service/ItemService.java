@@ -7,4 +7,6 @@ public interface ItemService {
     Response getItems(String request);
 
     Response addItem(Item item);
+
+    Response getAllItems();
 }

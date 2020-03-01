@@ -52,5 +52,12 @@ public class ItemServiceImpl implements ItemService {
         return response;
     }
 
+    @Override public Response getAllItems() {
+        Response response = new Response();
+        response.setResult(itemDALRepo.findAll());
+        response.setSuccess(true);
+        return response;
+    }
+
 
 }

@@ -21,6 +21,12 @@ public class ItemController {
         return itemService.getItems(request);
     }
 
+    @GetMapping(value = "/getAll", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Response getItems() {
+        return itemService.getAllItems();
+    }
+
     @PostMapping(value = "/addItem", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Response addItems(@RequestBody Item item) {
