@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 
 import static com.invo.util.IdGenerator.generateRandomString;
@@ -28,7 +29,11 @@ public class TransactionServiceImpl implements TransactionService {
         transaction.setTransactionDate(new Date());
         if(!transaction.getStockId().isEmpty() && !transaction.getUsername().isEmpty()) {
             UpdateResult updateResult = itemDAL.findAndModifyItem(transaction);
-            response.setSuccess(updateResult.getModifiedCount() == 1);
+            if(updateResult != null) {
+                response.setSuccess(updateResult.getModifiedCount() == 1);
+            } else {
+                response.setSuccess(false);
+            }
             return response;
         }
         response.setErrorCode("NOT_UPDATED");

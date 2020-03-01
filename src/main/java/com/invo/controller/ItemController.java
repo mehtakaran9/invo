@@ -22,7 +22,6 @@ public class ItemController {
     }
 
     @GetMapping(value = "/getAll", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
     public Response getItems() {
         return itemService.getAllItems();
     }

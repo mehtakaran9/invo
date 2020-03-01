@@ -15,7 +15,7 @@ public class Transaction {
     private int quantity;
     private long transactionAmount;
     private String soldBy;
-    private Date transactionDate;
+    private Date transactionDate = new Date();
     private String soldTo;
     private String username;
 }

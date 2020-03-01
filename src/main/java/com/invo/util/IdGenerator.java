@@ -8,7 +8,7 @@ public class IdGenerator {
         // the random strings
         String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
         String CHAR_UPPER = CHAR_LOWER.toUpperCase();
-        String NUMBER = "01234567   89";
+        String NUMBER = "0123456789";
 
         String DATA_FOR_RANDOM_STRING = CHAR_UPPER + NUMBER;
         SecureRandom random = new SecureRandom();
